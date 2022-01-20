@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body id="body">
+
+
+    <script>
+    let n = 5;
+    let m = 7;
+    let text = "JavaScript";
+    let tab = document.createElement("table");
+    tab.style.cssText = 'border: crimson 2px solid; width: 100%;height: 100px';
+    
+
+    for (tr=1; tr<=n; tr++) {
+        let s = document.createElement("tr");       
+        s.style.cssText = `border: black 3px solid`; //не работает
+        setTimeout(function() {s.remove()}, 6000);
+         tab.appendChild(s);
+            for (td=1; td<=m; td++) {
+            let i = document.createElement("td");
+            tab.appendChild(i);
+            i.innerHTML = text;
+            setTimeout(function() {text.remove()}, 2000); //на работает
+            
+            i.setAttribute('style', 'font-size: 20pt; text-align: center; border: violet 3px solid;');setTimeout(function() {i.remove()}, 4000);
+        };
+        
+    };
+ 
+    
+    document.body.append(tab);
+    setTimeout(function() {tab.remove()}, 8000);
+    
+
+
+    </script>
+</body>
+</html>
